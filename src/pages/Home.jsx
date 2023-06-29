@@ -149,7 +149,13 @@ export default function Home() {
         </section>
         <section>
             Kategori:
-            <option value=""></option>
+            <select >
+            <option value="Laptop" >Laptop</option>
+                <option value="Handphone">Handphone</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Headset">Headset</option>
+                <option value="Watch">Watch</option>
+            </select>
         </section>
         <section>
           Urutkan:
@@ -193,6 +199,8 @@ export default function Home() {
                   key={product.id}
                   {...product}
                   setEditedProduct={setEditedProduct}
+                  products={products}
+                  setProducts={setProducts}
                 />
               ))
           : "Tidak ada produk ditemukan."}

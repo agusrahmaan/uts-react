@@ -3,7 +3,7 @@ import {MdDelete} from 'react-icons/md'
 import {MdEdit} from 'react-icons/md'
 import {MdOutlineAddShoppingCart} from 'react-icons/md'
 
-export default function Product({ id, name, image, price,kategori, setEditedProduct,products,product, setProducts}) {
+export default function Product({ id, name, image, price,kategori, setEditedProduct,products, setProducts}) {
   return (
     <div className="product">
       <img src={image} alt={name} />
@@ -29,12 +29,13 @@ export default function Product({ id, name, image, price,kategori, setEditedProd
                 kategori,
               })
             }
+            title="Edit"
           >
             <MdEdit size={24}/>
           </Button>
           <Button variant="tonal" onClick={() =>
                       confirm(`Apakah Anda yakin ingin menghapus?`) &&
-                      setProducts(products.filter((p) => p.id !== product.id))
+                      setProducts(products.filter((p) => p.id !== id))
                     }
                     title="Hapus"><MdDelete size={24}/></Button>
         </div>
